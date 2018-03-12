@@ -29,7 +29,7 @@ public class GroupCreationTests {
     @Test
     public void testGroupCreation() {
         wd.findElement(By.linkText("groups")).click();
-        wd.findElement(By.name("new")).click();
+        wd.findElement(By.name("new6")).click();
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
         wd.findElement(By.name("group_name")).sendKeys("test1");
