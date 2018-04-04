@@ -2,6 +2,7 @@ package address_book.appmanager;
 
 import address_book.model.GroupData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
@@ -9,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  */
 public class GroupHelper extends HelperBase {
 
-    public GroupHelper(FirefoxDriver wd) {
+    public GroupHelper(WebDriver wd) {
         super(wd);
     }
 
@@ -53,4 +54,16 @@ public class GroupHelper extends HelperBase {
 
         click(By.name("update"));
     }
+
+    public boolean isGroupPresent() {
+        return isElementPresent (By.name("selected[]"));
+    }
+
+    public void createGroup(GroupData group) {
+        initGroupCreation();
+        fillGroupForm(group);
+        submitGroupCreation();
+        returnToGroupPage();
+    }
+
 }
